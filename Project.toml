@@ -1,7 +1,7 @@
 name = "Pipebraces"
 uuid = "25a62be5-bbe8-4619-a10f-9066af09d2c9"
 authors = ["ianqsong"]
-version = "0.1.0"
+version = "0.6.0"
 
 [compat]
 julia = "1"
