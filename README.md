@@ -1,6 +1,5 @@
 # Pipebraces `|> {}` 
 A small extension to the surface syntax of `Julia Base`, which provides a convenient piping tool for prototyping.
----
 
 ## With this extension you can do ...
 - `last(first(["hello", "world"]))` could be piping with braces as below.
