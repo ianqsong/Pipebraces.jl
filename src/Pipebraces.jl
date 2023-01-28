@@ -44,7 +44,6 @@ end
 
 checkbraces(ex::Expr) = length(ex.args) > 2 && isexpr(ex.args[3], [:braces, :bracescat])
 
-pipebraces(x) = x
 function pipebraces(ex::Expr)
     b = scanargs(checkbraces, ex)
     isempty(b) && return ex
@@ -223,7 +222,7 @@ function pipex(e1, e2vec::Vector{Tuple{Expr, Vector{Int}}})
 end
 
 macro pb(ex)
-    esc(pipebraces(ex))
+    ex isa Expr ? esc(pipebraces(ex)) : esc(ex)
 end
 
 function __init__()
