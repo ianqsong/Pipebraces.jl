@@ -17,15 +17,15 @@ julia> ["hello", "world"] |> {
        }
 ("hello", "world")
 ```
-- Please note that `{f;g}` is like a column while `{f g}` is like a row. 
-In fact it has been deprecated matrix syntax in Julia. Please note that 
+- Please note that `{f;g}` is like a column while `{f g}` is like a row.
+In fact it has been deprecated matrix syntax in Julia and the curly braces follows the same concatenation notation as square brackets `[]`. So the vertical concatenation 
 `{f;g}` is the same as 
 ```jl
        { f
          g
        }
 ```
-Although you could use comma, like `{f,g}`, too. But it's not always the case, especially when a row `{f g}` or a macro `{@m f}` was involved in the braces. So it's recommended to seperate pipe functions by newline or semicolon. 
+Although you could use comma too, like `{f,g}`, it's not always the case, especially when a row `{f g}` or a macro `{@m f}` was involved in the braces. So it's recommended to seperate pipe functions by newline or semicolon. 
 
 - Also, you could `println` intermiate results. Eg. the output of the step 1 in the following example, is printed with three dots "...".  
 ```jl
