@@ -184,6 +184,7 @@ function _pipex!(i2, e2copy, res)
         i2[end] > length(e.args) ? push!(e.args, res.args[end]) : setargs!(e2copy, res.args[end], i2)
         res.args[end] = e2copy
     end
+    return nothing
 end
 
 function pipex(e1::Expr, (e2,i2)::Tuple{Expr, Vector{Int}})

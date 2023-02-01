@@ -25,7 +25,7 @@ In fact it has been deprecated matrix syntax in Julia and the curly braces follo
          g
        }
 ```
-Although you could use comma too, like `{f,g}`, it's not always the case, especially when a row `{f g}` or a macro `{@m f}` was involved in the braces. So it's recommended to seperate pipe functions by newline or semicolon. 
+Although you could use comma too, like `{f,g}`, it's not always the case, especially when a row `{f g}` or a macro `{@m f}` was involved in the braces. So it's recommended to seperate functions in braces by newline or semicolon. 
 
 - Also, you could `println` intermiate results. Eg. the output of the step 1 in the following example, is printed with three dots "...".  
 ```jl
@@ -47,7 +47,7 @@ The former choice is the default, i.e., when you hit enter key or input nothing 
 
 - In Pluto notebooks, where `Base.active_repl_backend.ast_transforms` is not defined, you might just use the macro by `using Pipebraces: @pb` and ignore the question.
 
-### Let's see the usage through a typical example.
+### Let's walk through a typical example.
 ```jl
 julia> using DataFrames
 
@@ -66,6 +66,18 @@ julia> abspath(DEPOT_PATH[3], "base") |> {
         basename.(getindex.(_,1)) string.(getindex.(_,2))
         DataFrame(file=_[1], line=_[2])
         }
+7×2 DataFrame
+ Row │ file            line                              
+     │ String          String                            
+─────┼───────────────────────────────────────────────────
+   1 │ show.jl                                  :braces…
+   2 │ show.jl                 if head === :vcat || hea…
+   3 │ show.jl                     parens = (isa(a1,Exp…
+   4 │ basedocs.jl     Curly braces are used to specify…
+   5 │ basedocs.jl     Square braces are used for [inde…
+   6 │ namedtuple.jl       Meta.isexpr(ex, :braces) || …
+   7 │ toml_parser.jl          # SPEC: No newlines are …
+
 ```
 
 ## Shortcut for anonymous functions
