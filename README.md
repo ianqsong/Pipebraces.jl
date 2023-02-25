@@ -102,4 +102,4 @@ Eg. the row of `filter` in the example above. However, when `_` is not used for 
 
 ## The last but not least
 - Multi-line function calls are not supported, like `map` with `do` block. 
-- This package adopts the idea of using curly braces in the [proposal](https://discourse.julialang.org/t/fixing-the-piping-chaining-issue-rev-3/90836), but two implementations differ.
+- This package adopts the idea of using curly braces from the [proposal](https://discourse.julialang.org/t/fixing-the-piping-chaining-issue-rev-3/90836), but two implementations differ.
